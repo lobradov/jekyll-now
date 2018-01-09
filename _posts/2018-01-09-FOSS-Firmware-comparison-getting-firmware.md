@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Tasmota vs ESPurna vs ESPEasy - getting the firmware
-date: 2018-01-08
+date: 2018-01-09
 categories:
 tags:
 ---
