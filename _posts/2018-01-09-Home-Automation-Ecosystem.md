@@ -2,8 +2,9 @@
 layout: post
 title: Home automation ecosystem
 date: 2018-01-09
-categories: 
+categories:
 tags:
+comments: true
 ---
 
 Automating your home is a fun task, if for nothing else, than for the learning path you will cross during this process. Learning curve can be quite steep for someone that wasn't exposed to overall Home IoT systems, so in this article, I'll try to explain how your home ecosystem could look like, what are the layers, how they interact with each other, what are the software (and hardware) option for each layer and try to offer some pointers for further investigation.
