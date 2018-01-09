@@ -6,9 +6,7 @@ categories:
 tags:
 ---
 
-In previous post, I wrote about different OpenSource firmware options for ESP8266 devices and main differences between them.
-
-In this post I'd like to share some of my experiences getting and flashing one of the precompiled firmware options and will also explore a process of building your own firmware.
+I'd like to share some of my experiences getting and flashing one of the precompiled firmware options and will also explore a process of building your own firmware to better suit your needs.
 
 # Getting firmware for your board
 
@@ -55,7 +53,7 @@ Tasmota uses `user_config.h` and `user_config_override.h` to set a lot of option
 
 Most important parameters are the ones starting with `USE_`, that determine if support for specific functionality should be compiled in the firmware. For example, if you would like to use have support for Domoticz, but don't care about PZEM004T power monitor, relevant part of your user_config.h should look like:
 
-```C
+```
 #define USE_DOMOTICZ
 // #define USE_PZEM004T
 ```
@@ -64,7 +62,7 @@ Notice // in front of the line, which comments out use of specific modules or se
 
 Good practice is to use `user_config_override.h` to define your own configuration, but, since all parameters are defined as C preprocessor defines, you need to undefine before you redefine, as in:
 
-```C
+```
 #undef STA_SSID1
 #define STA_SSID1 "my-wifi-ssid"
 #undef STA_PASS1
