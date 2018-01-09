@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
-
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
+I started this blog as self-hack: I needed an excuse to organize my thoughts around home automation and present them in a consistent, meaningful way.
+I also figured I'm doing a lot of reading and research, and that fellow tinker like yourself might benefit from some of my findings.
+Finally, I needed excuse to play with different stuff - during writing of this blog, I discovered Jekyll and learned more about Markup, I played with Docker, Raspberry Pi and clones, various ESP8266 based platforms and sensors, and lot more.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+I prefer comments below posts, but in case you'd like to reach me privately, my email is:
+
+laz dot obradovic at gmail dot com
