@@ -2,7 +2,7 @@
 layout: post
 title: Home automation ecosystem
 date: 2018-01-09
-categories: blog
+categories: 
 tags:
 ---
 
