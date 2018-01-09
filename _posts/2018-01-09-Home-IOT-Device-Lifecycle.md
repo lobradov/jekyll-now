@@ -5,6 +5,7 @@ date: 2018-01-09
 categories:
 tags:
 comments: true
+toc: false
 ---
 
 Once you decide to install devices in your network and start using them in your daily interaction with your home, they start having their own lifecycle. You don't have to feed them and sign them lullabies when going to sleep, but periodic check and maintenance would ensure your home runs great and you have a lot of fun using it.

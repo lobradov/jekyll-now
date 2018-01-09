@@ -3,7 +3,8 @@ layout: post
 title: Moving from Blogger
 date: 2018-01-09
 categories: blog
-tags: 
+tags:
+comments: false
 ---
 
 After struggling to setup a proper blog on Blogger, I decided to give Jekyll + GitHub a go.
