@@ -1,13 +1,13 @@
 ---
 layout: post
 title: Home automation ecosystem
-date: 2018-01-09
+date: 2018-01-04
 categories:
 tags:
 comments: true
 ---
 
-Automating your home is a fun task, if for nothing else, than for the learning path you will cross during this process. Learning curve can be quite steep for someone that wasn't exposed to overall Home IoT systems, so in this article, I'll try to explain how your home ecosystem could look like, what are the layers, how they interact with each other, what are the software (and hardware) option for each layer and try to offer some pointers for further investigation.
+Automating your home is a fun task, if for nothing else, than for the learning path you will cross during this process. Learning curve can be quite steep for someone that wasn't exposed to overall Home IoT systems, so in this post, I'll try to explain how your home ecosystem could look like, what are the layers, how they interact with each other, what are the software (and hardware) option for each layer and try to offer some pointers for further investigation.
 
 # Overview
 It all started few years ago when Chinese company under an Espressif brand released their dirty-cheap Wifi-enabled micro-controller called ESP8266. Since you are here, I assume you know what it is, so I won't spend time explaining how great and powerful it is.
@@ -18,7 +18,7 @@ Being Wifi-enabled and having (almost) full IPv4 TCP stack, ESP8266 was a nice s
 
 ESP8266 itself was not powerful enough to be the only piece of the puzzle and typical home would include few other pieces, namely a Wifi-Mesh, MQTT controller, home automation software, monitoring platform, build and OTA server and many other things.
 
-This article is not a tutorial on how to set any of the options up. I might write that sometime in the future.
+This post is not a tutorial on how to set any of the options up. I might write that sometime in the future.
 
 # Architecture
 
@@ -51,7 +51,7 @@ Both sensors and actuators can use simple communication channels (pushbutton sen
 
 To interface users and other parts of the ecosystem, firmware should support protocols like MQTT (surprisingly, that's not default for most factory provided firmwares), TLS (think security) and have some administrative interface that you can use to configure and monitor your board.
 
-Many OpenSource options exist, Sonoff-Tasmota, ESPurna and ESPeasy being the most popular ones. Choice of firmware, together with choice of automation system will determine how easy can you do a lot of things around your house, so I'm preparing a comparison article that I'll publish rather soon.
+Many OpenSource options exist, Sonoff-Tasmota, ESPurna and ESPeasy being the most popular ones. Choice of firmware, together with choice of automation system will determine how easy can you do a lot of things around your house, so I'm preparing a comparison post that I'll publish rather soon.
 
 ### Sensors
 Sensor is any hardware that turns physical-world events and metrics into something computers can understand. Switches and pushbuttons are the simplest sensors, but list can include temperature and humidity meters; laser and microwave range meters; gas, particle, liquid, current, presence meters and counters, and many others...
@@ -66,7 +66,7 @@ Relays and Solid State Relays (for turning AC and/or DC on and off) and Triacs a
 ## Network
 Logically, all devices and components of the system should somehow be connected. ESP8266 offers built-in WiFi, so naturally, you need Wifi network spanning throughout your house, and in some cases, to a wider area around your house (ie. when you are automating your garden irrigation). While many users will have a single Wifi Access Point with multiple antennas, others might decide to have multiple independent APs or Wifi Mesh covering whole area.
 
-Security is also a big concern when it comes to networking, as many decide to mix IoT and "regular" devices on a single network, or even worst, open up some IoT to Internet access. I'll explore some of the best-practices in further articles.
+Security is also a big concern when it comes to networking, as many decide to mix IoT and "regular" devices on a single network, or even worst, open up some IoT to Internet access. I'll explore some of the best-practices in further posts.
 
 ## Message bus
 High-speed, high-capacity system for passing messages between the devices and automation software. In IoT industry, MQTT (as standard and protocol) is chosen as preferred option, but in home environments, we also see some other technologies, like REST, WebSockets or even CLI.
@@ -87,7 +87,7 @@ System for collecting all data periodically exposed by all sensors around your h
 
 For more serious usage, you can use long-term data to derive patterns and trends, which you can then use for your automation (for example, turn on heating 15 minutes before you would usually come home, and let system figure out when did you come home in the last 4 weeks).
 
-These systems are usually complex on their own, consisting of collector, database and graphing frontend, but that's topic for another article.
+These systems are usually complex on their own, consisting of collector, database and graphing frontend, but that's topic for another post.
 
 In some case, like Home-Assistant or OpenHAB, metric collection functionality is bundled together with automation logic, so you only need to add database backend to the picture. Popular choices include InfluxDB, Graphite, Prometheus, but can be as simple as plain-old RRD.
 

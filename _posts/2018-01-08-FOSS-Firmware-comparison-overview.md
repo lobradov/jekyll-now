@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Tasmota vs ESPurna vs ESPEasy - overview
-date: 2018-01-09
+date: 2018-01-08
 categories:
 tags:
 ---
@@ -59,7 +59,7 @@ All 3 firmware options share some of the common properties:
 * They all support **logging** over some interfaces, such as Serial, Syslog or HTTP, with configurable log levels.
 * All support time synchronization via **NTP**
 
-##Common areas for improvement
+## Common areas for improvement
 
 All firmware options suffer from the same common set of issues and potential areas for improvement:
 
