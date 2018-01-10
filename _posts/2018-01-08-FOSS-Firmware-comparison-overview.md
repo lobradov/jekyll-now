@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Tasmota vs ESPurna vs ESPEasy - overview
+title: Tasmota vs ESPurna vs ESPEasy - <br> overview
 date: 2018-01-08
 categories:
 tags:
@@ -89,6 +89,7 @@ All firmware options suffer from the same common set of issues and potential are
 * **Dependency on commands** - some functionality is impossible to set using WebUI and set options are not visible in debug messages. Reading docs, experimenting and knowing what you are doing helps.
 * **"All code needs to fit 1M boards" policy** - To ensure compatibility with smallest Flash sizes, Theo is obsessed with size and insists on including only features that all together fit 500K (half of 1M, to allow OTA). While everyone can recompile images to use different board layout, some features were not included, or were degraded in functionality to size concern as "one-size-fits-all" image doesn't fit magical 500K. Seems, with v2.4.0 of Arduino/ESP8266 framework, this will have to change, so dual-step-OTA process, introduced in June 2017 as suggested option and a best practice, will become mandatory.
 * **Basic push-button support** - buttons connected to Tasmota can either send press or long-press signal over MQTT, but not double-press, triple-press and similar gimmicks. Double-press is quite useful feature and it's shame it's not supported.
+* **MQTT failover** - Tasmota doesn't have an option to include secondary MQTT broker configuration, that would be used in case primary is out. This is partially mitigated by mDNS selection of MQTT brokers (Tasmota can automatically connect to a host advertising itself as ._mqtt endpoint over mDNS) but I'm personally not using this option due to security concerns and would rather have a configurable list of MQTT brokers.
 
 ## ESPurna
 
@@ -105,6 +106,7 @@ All firmware options suffer from the same common set of issues and potential are
 
 * **Board type and hardware is set during compilation time** - unlike other options, ESPurna requires you to either download right image for your board, or chose a board during compilation time, which will hardcode most of the hardware-related settings. This is not normally an issue once you configure everything, but can be a rough start, especially if you don't know what you want / need.
 * **Documentation and user forums** - it's not that ESPurna is not documented, but it's just that overall quality of documentation is not always up to average user level, making venture into ESPurna a bit steep learning curve. Similar could be said about user forums.
+* **MQTT failover** - Similarly to Tasmota, ESPurna doesn't allow you to configure more than one MQTT broker, so you can't have failover scenarios. EPSurna doesn't discover MQTT brokers, so the only way to get around this issue is to design your broker implementation to be High-Available. This is, btw, a proper way of dealing with the issue (each service should make sure itself is highly available), but firmware support for client-side failover handling would be appreciated as quick workaround.
 
 ## ESPEasy
 
