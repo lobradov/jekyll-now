@@ -135,8 +135,8 @@ ESPurna doesn't have a configuration for hardware and modules - as I mentioned e
 Few interesting things on ESPurna:
 - You can configure up to 5 different networks that will be used based on their *signal strength*. System will scan all networks and will choose the one that's configured with the best signal strenght. This is very nice if your devices are moving or if you have multiple less-stable-APs around your house.
 - You can make many changes to the configuration, but they will only be applied once you hit the "Save" button. While it's logical, I often forget about it and end up trying to understand why some of my settings didn't made any changes to behavior of firmware.
-- Unlike Tasmota, there's no need to reboot EPSurna for changes to take effect (once you save them ;)
-- MQTT messagges can be set to use JSON format, which is quite convenient for most of the automation software, including Home-Assistant. Instead of "regular" messages like:
+- Unlike Tasmota, there's no need to reboot ESPurna for changes to take effect (once you save them ;)
+- MQTT messages can be set to use JSON format, which is quite convenient for most of the automation software, including Home-Assistant. Instead of "regular" messages like:
 
 ```console
 $ mosquitto_sub -t ESPURNA_XXXXXX/\# -v

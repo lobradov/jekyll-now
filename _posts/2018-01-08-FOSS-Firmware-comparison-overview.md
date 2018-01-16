@@ -98,7 +98,7 @@ All firmware options suffer from the same common set of issues and potential are
 * **Home-Assistant auto-discovery** - ESPurna can publish data in a format discoverable by Home-Assistant, making integration of various switches, buttons, relays and lights automatic.
 * **Telnet support** - similar to Tasmota, but simpler, ESPurna offers unencrypted telnet interface that is perfect for debugging. For security reasons, it must be explicitly enabled in Web UI before usage.
 * **433Mhz RF** - receiving / learning / sending 433Mhz RF codes.
-* **mDNS, NetBIOS and LLMNR and SSDP advertising and discovery** - mDNS advertising being especially interesting, rest being there "because we can" ;)
+* **mDNS, NetBIOS and LLMNR and SSDP advertising and discovery** - mDNS advertising being especially interesting, rest being there "because we can" ;) Like Tasmota, ESPurna supports MQTT discovery, but with no failover.
 * **Direct InfluxDB integration** - can export metrics directly to InfluxDB, without a need for intermediate collector.
 * **Tailored binaries and integration with NoFUSS update framework** - Xose put a lot of effort into building a matrix of most used boards / sensors / features, and is offering individual images specifically tailored for your need. NoFUSS update framework promises to take care of subsequent upgrades by automatically keeping track of used firmware on specific board, but I haven't tested it in practice to be able to say how it actually works.
 
@@ -106,7 +106,7 @@ All firmware options suffer from the same common set of issues and potential are
 
 * **Board type and hardware is set during compilation time** - unlike other options, ESPurna requires you to either download right image for your board, or chose a board during compilation time, which will hardcode most of the hardware-related settings. This is not normally an issue once you configure everything, but can be a rough start, especially if you don't know what you want / need.
 * **Documentation and user forums** - it's not that ESPurna is not documented, but it's just that overall quality of documentation is not always up to average user level, making venture into ESPurna a bit steep learning curve. Similar could be said about user forums.
-* **MQTT failover** - Similarly to Tasmota, ESPurna doesn't allow you to configure more than one MQTT broker, so you can't have failover scenarios. EPSurna doesn't discover MQTT brokers, so the only way to get around this issue is to design your broker implementation to be High-Available. This is, btw, a proper way of dealing with the issue (each service should make sure itself is highly available), but firmware support for client-side failover handling would be appreciated as quick workaround.
+* **MQTT failover** - Similarly to Tasmota, ESPurna doesn't allow you to configure more than one MQTT broker, so you can't have failover scenarios. EPSurna does, however, offer MQTT broker mDNS discovery, but without failover. So the proper way to get around this issue is to design your broker implementation to be High-Available. 
 
 ## ESPEasy
 

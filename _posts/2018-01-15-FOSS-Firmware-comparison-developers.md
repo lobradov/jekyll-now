@@ -155,7 +155,7 @@ ESPurna code is really a sight for sore eyes - just by looking at the source dir
 
 Those 400, and rest of 19k lines of code are very readable and very easy to understand, even without looking at surrounding code. Core code is more or less 'pure C', while sensors (described below) are implemented as C++ classes.
 
-ESPurna uses SPIFFS, and filesystem is used not only for state information and configuration, but also to host static file for WebUI.  
+ESPurna is also not using SPIFFS, but is managing it's own Flash read/writes for configuration, state information, and very interestingly, Web server static files.
 
 ESPurna uses PlatformIO for building, but for WebUI, platformIO will invoke gulp to build necessary Javascripts and create a static WebUI that will be uploaded as part of build.  
 
@@ -185,6 +185,9 @@ WebUI is whole different ball game - first, it's packaged using gulp with quite 
 ### What I liked
 
 Xose did amazing job in creating a rule-based structure for creating new modules, and, of course, a BaseSensor class for sensors. Looking at other modules, it's very easy to pick up the logic and requirements and create your own module and sensor.
+
+Another big item I discovered recently is a very smart use of Flash space for serving proper Web content. Basic idea is to wrote webUI frontend code, as if you would run it off of a regular server, use gulp to pack it into archive and then embedd all of that into PROGMEM.  
+Xose described the process in [his blog](http://tinkerman.cat/embed-your-website-in-your-esp8266-firmware-image/) and I suggest you spend some time on this - very interesting and smart. 
 
 ## ESPEasy
 
