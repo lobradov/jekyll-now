@@ -33,6 +33,8 @@ export PATH=${PATH}:`pwd`/build
 ```
 This will give you number of docker CLI binaries in `build/` directory and add them to your path.
 
+> Update: Seems of last night, PR for merging this functionality into upstream got accepted, so official docker client will have `manifest` command. Still, as of today, instructions to build and enable experimental are complicated than the above, so let's keep it as such.
+
 ## `binfmt_misc` for target architectures
 
 In order to run and build images for other architectures, we're going to use a trick called `binfmt_misc`.  
@@ -57,7 +59,7 @@ for target_arch in aarch64 arm x86_64; do
   tar -xvf x86_64_qemu-${target_arch}-static.tar.gz
 done
 ```
-Feel free to customize the list in target_arch according to what how many target architectures are you going to build for.
+Feel free to customize the list in `target_arch` according to how many target architectures are you going to build for.
 Complete list of available handlers (and their versions) is here:
 https://github.com/multiarch/qemu-user-static/releases
 
@@ -101,12 +103,14 @@ You'll notice 2 things:
 - we added static Qemu binary to the image.
 - docker notation of architecture is different than Qemu (and `uname -m`) notation, so we might need to apply some translations. Hopefully, following table would help:
 
-| Docker architecture | `uname -m` architecture |
-| ------------------- | ----------------------- |
-| amd64               | x86_64                  |
-| arm32v6             | armhf                   |
-| arm64v8             | aarch6                  |
+| Docker architecture | `uname -m` architecture | Note             |
+| ------------------- | ----------------------- | ---------------- |
+| amd64               | x86_64                  |                  |
+| arm32v6             | armhf, arm7l            | Raspberry Pis    |
+| arm64v8             | aarch6                  | A53, H3, H5 ARMs |
 
+Take it with a grain of salt - some Docker baseimages don't provide all variants, and arm32v7 is backwards compatible with arm32v6, so for `library/alpine`, you will actually use arm32v6 variant for all Raspberry Pies.  
+I said things were complicated and could be made simpler, but not completely simple.
 
 ## Same Dockerfile template
 
@@ -166,13 +170,13 @@ docker-linux-amd64 manifest push yourrepo/nginx:latest
 ```
 (use docker-darwin-amd64 if you are on a Mac)
 
-You will notice that we have to annotate smoe images, to give hints to Docker client/daemon to understand which images to pull. Again, some translations needed, so here's the upper table once again:
+You will notice that we have to annotate some images, to give hints to Docker client/daemon to understand which images to pull. Again, some translations needed, so here's the upper table once again:
 
-| Docker architecture | `uname -m` architecture | annotate flags |
-| ------------------- | ----------------------- | -------------- |
-| amd64               | x86_64                  | (none) |
-| arm32v6             | armhf                   | `--os linux --arch arm` |
-| arm64v8             | aarch6                  | `--os linux --arch arm64 --variant armv8` |
+| Docker architecture | `uname -m` architecture | Annotate flage   | Boards           |
+| ------------------- | ----------------------- | ---------------- | ---------------- |
+| amd64               | x86_64                  | (none)           |                  |
+| arm32v6             | armhf                   | Raspberry Pis   | `--os linux --arch arm` |
+| arm64v8             | aarch6                  | A53, H3, H5 ARMs | `--os linux --arch arm64 --variant armv8` |
 
 If you compiled for other architectures and know other combinations, let me know!
 
