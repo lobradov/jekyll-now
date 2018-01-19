@@ -27,6 +27,7 @@ I'm assuming you are using X86_64 machine to as **build host**, and it can run e
 
 ```bash
 git clone -b manifest-cmd https://github.com/clnperez/cli.git
+cd cli
 make -f docker.Makefile cross
 export PATH=${PATH}:`pwd`/build
 ```
