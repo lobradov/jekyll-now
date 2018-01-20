@@ -9,6 +9,25 @@ comments: true
 You built some Docker images for your laptop, but also for bunch of those Raspberry/Orange/Banana Pies you got around? You hate building an image per platform, tagging them, remembering tag and then matching tag to your architecture... All of this sound too complicated?  
 It is! But, it can be simpler.
 
+# TL; DR
+
+```
+cd /usr/src
+git clone https://github.com/lobradov/docker-multiarch-builder.git
+cd docker-multiarch-builder
+./run-once.sh
+
+
+cd /usr/src/
+mkdir my-new-docker-project
+/usr/src/docker-multiarch-builder/init-repo.sh my-new-docker-project/
+
+cd my-new/docker-project
+vi build.config
+vi Dockerfile.cross
+./build.sh
+```
+
 # How does it work?
 
 There's a number of highly technical explanations out there that describe how whole multi-arch thing works in Docker, so I'm not going to waste your time on that.
