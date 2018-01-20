@@ -20,7 +20,7 @@ cd docker-multiarch-builder
 
 cd /usr/src/
 mkdir my-new-docker-project
-/usr/src/docker-multiarch-builder/init-repo.sh my-new-docker-project/
+docker-multiarch-builder/init-repo.sh my-new-docker-project/
 
 cd my-new/docker-project
 vi build.config
@@ -86,7 +86,7 @@ You will very likely either run this section for every build project, or you wil
 
 # Creating your Dockerfile(s)
 
-## Differnet Dockerfile per architecture
+## Different Dockerfile per architecture
 
 You can create separate `Dockerfile.<arch>` for each of the architectures. This would allow you to have different build procedures for each of the archs (so you can push different package repositories). For example:
 
