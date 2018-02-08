@@ -14,7 +14,7 @@ IOT is a great thing: you buy a cheap controller, program it, see it working and
 Quick look at Shodan shows us number of issues with today's state of Home IOT security: As of right now:
 - at least 1516 homes are open to [unrestricted, probably unauthorized and open remote management](https://www.shodan.io/search?query=espurna%2F+OR+cmnd%2F+OR+espeasy%2F+OR+sonoff+OR+domoticz). Refine a search and you'll probably get more.
 - 950 families are openly publishing their [GPS-accurate whereabouts](https://www.shodan.io/search?query=owntracks%2F)
-- 129 garages [can be open remotely over the internet](https://www.shodan.io/search?query=garage+port%3A%221883%22).
+- 129 garages [can be open remotely over the internet](https://www.shodan.io/search?query=garage+port%3A%221883%22) (you need to have an account with Shodan for this one to display)
 
 > Shodan provides you the ability to see who are these poor souls who didn't get the concept of security right. Feel free to look at the list, learn something from it, but don't abuse your knowledge. Don't be an ass.
 
