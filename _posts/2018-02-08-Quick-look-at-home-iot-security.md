@@ -7,7 +7,7 @@ tags:
 comments: true
 ---
 
-IOT is a great thing: you buy a cheap controller, program it, see it working and, all of a sudden, start depending on it in your daily life. But, what if someone gets to your network and starts turning lights on and off? What if it's not only lights, but irrigation systems, garage doors or worst?  
+IOT is a great thing: you buy a cheap controller, program it, see it working and, all of a sudden, start depending on it in your daily life. But, what if someone gets to your network and starts turning lights on and off? What if it's not only lights, but irrigation systems, garage doors or worse?  
 
 # Current state of Home IOT security
 
