@@ -15,16 +15,16 @@ I took original home-assistant images and just provided a single fat manifest fo
 So, instead of pulling different images for different platforms:
 ```console
 # (on Linux)
-docker run -d homeassistant/home-assistant
+$ docker run -d homeassistant/home-assistant
 # (on Raspberry Pi)
-docker run -d homeassistant/raspberrypi{1,2,3}-homeassistant
+$ docker run -d homeassistant/raspberrypi{1,2,3}-homeassistant
 # (on Orange Pi Prime):
-docker run -d homeassistant/aarch64-homeassistant
+$ docker run -d homeassistant/aarch64-homeassistant
 ```
 
 you can just do:
 ```
-docker run -d lobradov/homeassistant
+$ docker run -d lobradov/homeassistant
 ```
 
 and leave the magic of choosing right image to to Docker engine.
@@ -60,7 +60,7 @@ Same as Mosquitto, original Certbot images are build only for X86_64 (amd64), so
 
 Usage is the same as original image, so:
 ```console
-docker run -it --rm -p 443:443 -p 80:80 --name certbot \
+$ docker run -it --rm -p 443:443 -p 80:80 --name certbot \
   -v /etc/letsencrypt \
   -v /var/lib/letsencrypt \
   -v /var/log \
