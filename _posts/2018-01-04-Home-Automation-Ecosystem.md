@@ -76,7 +76,7 @@ There are number of hosted MQTT servers out there and some of them are free of c
 Popular choice is Mosquitto, mainly due it's small footprint and ease of installation, but alternatives like EMQ and VerneMQ also exist.
 
 ## Automation logic
-System, framework or a simple "if <condition> than <action>" logic that implements 3rd Newton law in your house (action and reaction - connects the sensors input to actuators output).
+System, framework or a simple "if \<condition\> then \<action\>" logic that implements 3rd Newton law in your house (action and reaction - connects the sensors input to actuators output).
 
 Logic can be as simple as "when I flip a switch on device, turn on a relay on same device" (and will probably be implemented on the device itself), but can be as complex as "turn on my bathroom fan and open the window if difference between bathroom and living room temperature is higher than 15 degrees, but only if humidity is higher than 70% or if it's summer" which will collect data from more than one sensor and implement action on more than one actuator (this is, btw, real life example ;)
 
