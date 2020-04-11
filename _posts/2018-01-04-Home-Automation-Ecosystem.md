@@ -24,15 +24,15 @@ This post is not a tutorial on how to set any of the options up. I might write t
 
 Overall ecosystem architecture includes few layers:
 
-Automation logic\
-Metric collection system\
-Management system\
-Message Bus\
-Network\
-Sensors\
-Actuators\
-Firmware\
-Board
+* Automation logic
+* Metric collection system
+* Management system
+* Message Bus
+* Network
+* Sensors
+* Actuators
+* Firmware
+* Board
 
 ## IoT Hardware
 Hardware includes all nice little things we usually get from Ebay or Aliexpress/DealExtreme, such as fabricated modules, individual boards, sensors or actuators... Role of the hardware is to sense the physical world (using sensors), inform automation system about it and take orders on how to interact with the physical world (through actuators). Hardware needs to run firmware and can have /some/ automation logic built-in to make local decisions, but those are usually very simple (like switch-relay link, or timers).
