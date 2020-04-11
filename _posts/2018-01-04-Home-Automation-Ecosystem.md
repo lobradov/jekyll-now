@@ -24,14 +24,14 @@ This post is not a tutorial on how to set any of the options up. I might write t
 
 Overall ecosystem architecture includes few layers:
 
-Automation logic
-Metric collection system
-Management system
-Message Bus
-Network
-Sensors
-Actuators
-Firmware
+Automation logic\
+Metric collection system\
+Management system\
+Message Bus\
+Network\
+Sensors\
+Actuators\
+Firmware\
 Board
 
 ## IoT Hardware
