@@ -10,6 +10,8 @@ You are here because you are already aboard the Home IoT bandwagon, so I don't n
 Luckily, community took this issue in their hands, and over the course of year and a half, we saw 3 amazing OpenSource projects that are addressing this (and many other) issues.
 In the next few blog posts, I'll try to compare 3 most popular OpenSource firmware options from multiple angles, and hopefully help you decide which one to go with. This post is an overview and introduction into different options, with a very high-level comparison between them.
 
+Be sure to checkout update to this article, available in [my 2020 update](/FOSS-firmware-comparison-revisited).
+If you are a developer and would like to contribute to one of the projects, be sure to checkout (a bit outdated) [Contributing comparison](/FOSS-Firmware-comparison-developers)
 
 # Firmware overview
 
