@@ -201,7 +201,7 @@ domoticz/in {"idx":1,"command":"switchlight","switchcmd":"Off"}
 domoticz/in {"idx":1,"command":"switchlight","switchcmd":"On"}
 ```
 
-Trouble was, I didn't wanted ESPEasy to maintain a virtual state of a switch object, I just wanted it to send a note when button was pressed (one press, double-press or long-press, if I can choose). So far, I was not able to configure ESPEasy to do that.
+Trouble was, I didn't want ESPEasy to maintain a virtual state of a switch object, I just wanted it to send a note when button was pressed (one press, double-press or long-press, if I can choose). So far, I was not able to configure ESPEasy to do that.
 
 Next, to create a logic that button will flip relay state, I had to enable "Rules" in Tools -> Advanced settings. Then, another item in the menu would appear, allowing me to edit Ruleset 1. Editor like box would appear and I would enter this:
 ```
